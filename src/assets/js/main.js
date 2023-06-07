@@ -223,6 +223,7 @@ function removeModel() {
     scene.remove(model);
     model.geometry.dispose();
     model.material.dispose();
+    renderer.dispose();
     model = null;
   }
 }
