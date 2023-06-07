@@ -2,14 +2,15 @@ import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig(({ command, mode }) => ({
-  base: command === "build" ? "/BossaLinda/" : "./",
-  publicDir: command === "build" ? "public" : "public",
+  root: "src",
+  base: "/BossaLinda/",
+  publicDir: "public",
 
   build: {
     brotliSize: false,
     manifest: false,
     minify: mode === "development" ? false : "terser",
-    outDir: "dist",
+    outDir: "../dist",
     sourcemap: command === "serve" ? "inline" : false,
     chunkSizeWarningLimit: 1000,
     // rollupOptions: {

@@ -3,8 +3,8 @@ import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig(({ command, mode }) => ({
   root: "src",
-  base: "/BossaLinda/",
-  publicDir: "./public",
+  base: command === "build" ? "./" : "./",
+  publicDir: command === "build" ? "./public" : "./public",
 
   build: {
     brotliSize: false,
@@ -24,7 +24,7 @@ export default defineConfig(({ command, mode }) => ({
   },
 
   server: {
-    origin: "https://fullstackindie.github.io",
+    origin: "http://localhost:5500",
   },
   plugins: [tsconfigPaths()],
 }));
