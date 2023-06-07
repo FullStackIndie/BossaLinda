@@ -198,9 +198,6 @@
                 </div>
                 <div class="col-8 ms-4 mb-4 model">
 
-                    <div id="stl_cont" class="shadow border-olive mb-5" style="width: 100%; height: 600px;">
-                        <!-- three.js canvas 1 -->
-                    </div>
                     <div class="row">
                         <div class="col-6"></div>
                         <div class="col-2">
@@ -210,10 +207,26 @@
                             <div class="col-4"></div>
                         </div>
                     </div>
-
-                    <div id="model-view" class="shadow border-olive">
-
+                    <p class="text-center font-monospace">Left <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mouse2-fill"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M7.5.026C4.958.286 3 2.515 3 5.188V5.5h4.5V.026zm1 0V5.5H13v-.312C13 2.515 11.042.286 8.5.026zM13 6.5H3v4.313C3 13.658 5.22 16 8 16s5-2.342 5-5.188V6.5z" />
+                    </svg> = Rotate View | Left <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mouse2-fill"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M7.5.026C4.958.286 3 2.515 3 5.188V5.5h4.5V.026zm1 0V5.5H13v-.312C13 2.515 11.042.286 8.5.026zM13 6.5H3v4.313C3 13.658 5.22 16 8 16s5-2.342 5-5.188V6.5z" />
+                    </svg> + Hold Shift = Rotate Model</p>
+                    <p class="text-center font-monospace">Right <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mouse2-fill"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M7.5.026C4.958.286 3 2.515 3 5.188V5.5h4.5V.026zm1 0V5.5H13v-.312C13 2.515 11.042.286 8.5.026zM13 6.5H3v4.313C3 13.658 5.22 16 8 16s5-2.342 5-5.188V6.5z" />
+                    </svg> = Move Model Around | Mouse Scroll = Zoom In-Out</p>
+                    <p class="text font-monospace"></p>
+                    <div id="model-view" class="shadow border-olive mb-5">
                         <!-- three.js canvas 2 -->
+                    </div>
+                    <div id="stl_cont" class="shadow border-olive" style="width: 100%; height: 600px;">
+                        <!-- three.js canvas 1 -->
                     </div>
                 </div>
                 <div class="col-1">
@@ -226,6 +239,7 @@
                 </div>
             </div>
     </main>
+
 
     <template id="anchor-template">
         <img class="highlight mb-4 selectable model-src" src="" data-src="" width="25" height="100"
@@ -402,14 +416,11 @@
         function updateStlViewer()
         {
             var models = document.querySelectorAll(".model-src");
-            console.log(models);
             for (let i = 0; i < models.length; i++)
             {
-                console.log(models[i]);
                 models[i].addEventListener("click", () =>
                 {
                     var dataSrc = models[i].getAttribute("data-src");
-                    console.log("Data " + dataSrc);
                     stlViewer.remove_model(0);
                     stlViewer.add_model([{ id: 0, filename: dataSrc }]);
                 });
@@ -418,7 +429,6 @@
 
         function checkIfImagesLoaded()
         {
-            console.log("checking for images");
             var models = document.querySelectorAll(".model-src");
             if (models.length > 0)
             {

@@ -196,6 +196,63 @@ function STLViewer(modelUrl, elementID) {
       // );
       // camera.position.z = largestDimension * 1.5;
 
+      // Initialize variables
+      let mouseX, mouseY, euler;
+      let isShiftDown = false;
+
+      // Add event listeners for mouse and keyboard input
+      window.addEventListener("mousemove", onMouseMove, false);
+      window.addEventListener("keydown", onKeyDown, false);
+      window.addEventListener("keyup", onKeyUp, false);
+      window.addEventListener("mousedown", onMouseDown, false);
+      window.addEventListener("mouseup", onMouseUp, false);
+
+      // Function to handle keydown events
+      function onKeyDown(event) {
+        if (event.keyCode === 16) {
+          // Shift key
+          isShiftDown = true;
+        }
+      }
+
+      // Function to handle keyup events
+      function onKeyUp(event) {
+        if (event.keyCode === 16) {
+          // Shift key
+          isShiftDown = false;
+        }
+      }
+
+      // Function to handle mouse movement
+      function onMouseMove(event) {
+        // Calculate normalized device coordinates
+        mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+        mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+        euler = new THREE.Euler(mouseY * Math.PI, mouseX * Math.PI, 0, "XYZ");
+      }
+
+      // Function to handle mouse down events
+      function onMouseDown(event) {
+        if (event.button === 0 && isShiftDown) {
+          // Left mouse button and Shift key
+          document.addEventListener("mousemove", rotateModel, false);
+        }
+      }
+
+      // Function to handle mouse up events
+      function onMouseUp(event) {
+        if (event.button === 0 && isShiftDown) {
+          // Left mouse button and Shift key
+          document.removeEventListener("mousemove", rotateModel, false);
+        }
+      }
+
+      function rotateModel(event) {
+        if (model) {
+          model.rotation.setFromVector3(euler);
+        }
+      }
+
       firstLoad = false;
       var animate = function (mesh) {
         requestAnimationFrame(animate);
