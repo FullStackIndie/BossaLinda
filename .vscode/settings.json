@@ -1,7 +1,8 @@
 {
-    "workbench.colorCustomizations": {
-        "activityBar.background": "#243207",
-        "titleBar.activeBackground": "#33460A",
-        "titleBar.activeForeground": "#F7FCED"
-    }
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#243207",
+    "titleBar.activeBackground": "#33460A",
+    "titleBar.activeForeground": "#F7FCED"
+  },
+  "ansible.python.interpreterPath": "c:\\Python39\\python.exe"
 }
