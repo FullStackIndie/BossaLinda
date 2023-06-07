@@ -41,6 +41,12 @@ jobs:
       - name: Install Vite
         run: npm install --save-dev vite
 
+      - name: Install TypeScript Configs
+        run: npm install vite-tsconfig-paths --save-dev
+
+      - name: Install Terser
+        run: npm install terser --save-dev
+
       - name: Build with Vite
         run: npx vite build
 
