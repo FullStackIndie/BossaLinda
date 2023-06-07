@@ -5,7 +5,7 @@ import * as THREE from "three";
 import WebGL from "three/addons/capabilities/WebGL.js";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { STLLoader } from "three/addons/loaders/STLLoader.js";
-import { ModelLoader } from "./model_loader";
+import { ModelLoader } from "/assets/js/model_loader.js";
 
 const scene = new THREE.Scene();
 
@@ -251,7 +251,7 @@ if (WebGL.isWebGLAvailable()) {
   //   "model"
   // );
   if (firstLoad) {
-    STLViewer("/models/40k_Tau_Firesight_Marksman_Pod.stl");
+    STLViewer("./models/40k_Tau_Firesight_Marksman_Pod.stl");
     firstLoad = false;
   }
 } else {
