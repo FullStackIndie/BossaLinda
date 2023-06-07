@@ -24,7 +24,7 @@ export default defineConfig(({ command, mode }) => ({
   },
 
   server: {
-    origin: "http://localhost:5500",
+    origin: "https://fullstackindie.github.io/BossaLinda",
   },
   plugins: [tsconfigPaths()],
 }));
