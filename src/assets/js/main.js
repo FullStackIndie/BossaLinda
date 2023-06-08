@@ -67,7 +67,7 @@ const groundMat = new THREE.MeshLambertMaterial({ color: 0xffffff });
 groundMat.color.setHSL(0.095, 1, 0.75);
 
 const ground = new THREE.Mesh(groundGeo, groundMat);
-ground.position.y = -33;
+ground.position.y = -35;
 ground.rotation.x = -Math.PI / 2;
 ground.receiveShadow = true;
 scene.add(ground);
@@ -101,7 +101,8 @@ scene.add(axesHelper);
 var modelView = document.getElementById("model-view");
 // renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setPixelRatio(window.devicePixelRatio);
-renderer.setSize(modelView.offsetWidth, window.innerHeight - 100);
+// renderer.setSize(modelView.offsetWidth, window.innerHeight - 200);
+renderer.setSize(modelView.offsetWidth, 500);
 modelView.appendChild(renderer.domElement);
 
 const controls = new OrbitControls(camera, modelView);
@@ -126,7 +127,7 @@ function STLViewer(modelUrl, elementID) {
   );
   if (document.getElementById("model-load-spinner") == null) {
     var template = document.getElementById("spinner-template");
-    var view = document.getElementById("model-view");
+    var view = document.getElementById("spinner-view");
     var div = template.content.querySelector("div");
     var spinner = document.importNode(div, true);
     view.appendChild(spinner);

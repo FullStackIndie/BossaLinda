@@ -197,8 +197,21 @@
                     </div>
                 </div>
                 <div class="col-8 ms-4 mb-4 model">
-
-                    <div class="row">
+                    <p class="text-center font-monospace">Left <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" fill="currentColor" class="bi bi-mouse2-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M7.5.026C4.958.286 3 2.515 3 5.188V5.5h4.5V.026zm1 0V5.5H13v-.312C13 2.515 11.042.286 8.5.026zM13 6.5H3v4.313C3 13.658 5.22 16 8 16s5-2.342 5-5.188V6.5z" />
+                        </svg> = Rotate View <b>|</b> Left <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-mouse2-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M7.5.026C4.958.286 3 2.515 3 5.188V5.5h4.5V.026zm1 0V5.5H13v-.312C13 2.515 11.042.286 8.5.026zM13 6.5H3v4.313C3 13.658 5.22 16 8 16s5-2.342 5-5.188V6.5z" />
+                        </svg> (Hold) + Shift (Hold) = Rotate Model</p>
+                    <p class="text-center font-monospace">Right <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" fill="currentColor" class="bi bi-mouse2-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M7.5.026C4.958.286 3 2.515 3 5.188V5.5h4.5V.026zm1 0V5.5H13v-.312C13 2.515 11.042.286 8.5.026zM13 6.5H3v4.313C3 13.658 5.22 16 8 16s5-2.342 5-5.188V6.5z" />
+                        </svg> = Move Camera Around <b>|</b> Mouse Scroll = Zoom In-Out</p>
+                    <div class="row" id="spinner-view">
                         <div class="col-6"></div>
                         <div class="col-2">
                             <div class="spinner-border" role="status" id="model-load-spinner">
@@ -207,25 +220,28 @@
                             <div class="col-4"></div>
                         </div>
                     </div>
-                    <p class="text-center font-monospace">Left <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mouse2-fill"
-                        viewBox="0 0 16 16">
-                        <path
-                            d="M7.5.026C4.958.286 3 2.515 3 5.188V5.5h4.5V.026zm1 0V5.5H13v-.312C13 2.515 11.042.286 8.5.026zM13 6.5H3v4.313C3 13.658 5.22 16 8 16s5-2.342 5-5.188V6.5z" />
-                    </svg> = Rotate View | Left <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mouse2-fill"
-                        viewBox="0 0 16 16">
-                        <path
-                            d="M7.5.026C4.958.286 3 2.515 3 5.188V5.5h4.5V.026zm1 0V5.5H13v-.312C13 2.515 11.042.286 8.5.026zM13 6.5H3v4.313C3 13.658 5.22 16 8 16s5-2.342 5-5.188V6.5z" />
-                    </svg> + Hold Shift = Rotate Model</p>
-                    <p class="text-center font-monospace">Right <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mouse2-fill"
-                        viewBox="0 0 16 16">
-                        <path
-                            d="M7.5.026C4.958.286 3 2.515 3 5.188V5.5h4.5V.026zm1 0V5.5H13v-.312C13 2.515 11.042.286 8.5.026zM13 6.5H3v4.313C3 13.658 5.22 16 8 16s5-2.342 5-5.188V6.5z" />
-                    </svg> = Move Model Around | Mouse Scroll = Zoom In-Out</p>
-                    <p class="text font-monospace"></p>
                     <div id="model-view" class="shadow border-olive mb-5">
                         <!-- three.js canvas 2 -->
                     </div>
-                    <div id="stl_cont" class="shadow border-olive" style="width: 100%; height: 600px;">
+                    <div class="row" id="spinner-view-2">
+                        <div class="col-6"></div>
+                        <div class="col-2">
+                            <div class="spinner-border" role="status" id="model-load-spinner-2">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <div class="col-4"></div>
+                        </div>
+                    </div>
+                    <p class="text-center font-monospace">Left <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-mouse2-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M7.5.026C4.958.286 3 2.515 3 5.188V5.5h4.5V.026zm1 0V5.5H13v-.312C13 2.515 11.042.286 8.5.026zM13 6.5H3v4.313C3 13.658 5.22 16 8 16s5-2.342 5-5.188V6.5z" />
+                        </svg> = Rotate Model <b>|</b> Right <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-mouse2-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M7.5.026C4.958.286 3 2.515 3 5.188V5.5h4.5V.026zm1 0V5.5H13v-.312C13 2.515 11.042.286 8.5.026zM13 6.5H3v4.313C3 13.658 5.22 16 8 16s5-2.342 5-5.188V6.5z" />
+                        </svg> = Move Camera Around <b>|</b> Mouse Scroll = Zoom In-Out</p>
+                    <div id="stl_cont" class="shadow border-olive" style="width: 100%; height: 500px;">
                         <!-- three.js canvas 1 -->
                     </div>
                 </div>
@@ -249,18 +265,24 @@
 
     <template id="spinner-template">
         <div id="model-load-spinner" class="row">
-            <div class="col-5">
-            </div>
-            <div class="col-4">
-                <br />
-                <br />
-                <br />
-                <br />
-                <div class="spinner-border" role="status">
+            <div class="col-6"></div>
+            <div class="col-2">
+                <div class="spinner-border" role="status" id="model-load-spinner">
                     <span class="visually-hidden">Loading...</span>
                 </div>
+                <div class="col-4"></div>
             </div>
-            <div class="col-3">
+        </div>
+    </template>
+
+    <template id="spinner-template-2">
+        <div id="model-load-spinner" class="row">
+            <div class="col-6"></div>
+            <div class="col-2">
+                <div class="spinner-border" role="status" id="model-load-spinner-2">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <div class="col-4"></div>
             </div>
         </div>
     </template>
@@ -408,23 +430,76 @@
         {
             stlViewer = new StlViewer(document.getElementById("stl_cont"),
                 {
-                    models: [{ id: 0, filename: "https://fullstackindie.github.io/BossaLinda/models/40k_Tau_Firesight_Marksman_Pod.stl" }],
+                    models: [{
+                        id: 0,
+                        filename: "https://fullstackindie.github.io/BossaLinda/models/40k_Tau_Firesight_Marksman_Pod.stl",
+                        scale: .3
+                    }],
+                    loading_progress_callback: loadProgress,
+                    camerax: -100,
+                    cameray: 10,
                 });
             isFirstLoad = false;
         }
 
         function updateStlViewer()
         {
+            if (!isImagesLoaded)
+            {
+                return;
+            }
             var models = document.querySelectorAll(".model-src");
             for (let i = 0; i < models.length; i++)
             {
                 models[i].addEventListener("click", () =>
                 {
                     var dataSrc = models[i].getAttribute("data-src");
-                    stlViewer.remove_model(0);
+                    // stlViewer.remove_model(0);
+                    stlViewer.clean();
+                    addSpinner("spinner-view-2")
                     stlViewer.add_model([{ id: 0, filename: dataSrc }]);
                 });
             }
+        }
+
+        function addSpinner(viewId)
+        {
+            if (document.getElementById("model-load-spinner-2") == null)
+            {
+                var template = document.getElementById("spinner-template-2");
+                var view = document.getElementById(viewId);
+                var div = template.content.querySelector("div");
+                var spinner = document.importNode(div, true);
+                view.appendChild(spinner);
+            }
+        }
+
+        function loadProgress(loadStatus, loadSession)
+        {
+            let loaded = 0;
+            let total = 0;
+            Object.keys(loadStatus).forEach((modelId) =>
+            {
+                console.log(`Model ID : ${modelId}`);
+                console.log(`Load Session : ${loadStatus[modelId].load_session}`);
+                console.log(`Loaded : ${loadStatus[modelId].loaded}`);
+                console.log(`Total Loaded : ${loadStatus[modelId].total}`);
+                if (loadStatus[modelId].load_session == loadSession)
+                {
+                    loaded += loadStatus[modelId].loaded;
+                    total += loadStatus[modelId].total;
+                    console.log(`Loaded ${loaded}  out of ${total}`);
+                }
+                if (total == loaded)
+                {
+                    console.log("ViewSTL Model loaded Successfully");
+                    if (document.getElementById("model-load-spinner-2") != null)
+                    {
+                        document.getElementById("model-load-spinner-2").remove();
+                    }
+                }
+            });
+
         }
 
         function checkIfImagesLoaded()
